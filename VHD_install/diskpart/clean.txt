@@ -1,0 +1,6 @@
+sel disk 0
+clean
+create part pri
+assign letter=c
+format fs=ntfs quick
+active

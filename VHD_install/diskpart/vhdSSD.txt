@@ -1,0 +1,4 @@
+select vdisk file=c:\vhd\windows.vhd
+attach vdisk
+select part 1
+assign letter=v
