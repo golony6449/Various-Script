@@ -1,7 +1,3 @@
 select vdisk file=c:\vhd\windows.vhd
 expand vdisk maximum=102400
 create vdisk file=c:\vhd\child.vhd parent=c:\vhd\windows.vhd
-attach vdisk
-select part 1
-extend
-assign letter=v

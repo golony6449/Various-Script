@@ -90,9 +90,11 @@ diskpart /s .\diskpart\vhdSSD.txt
 
 ) else (
 
-echo	Child를 생성하고 Attach한 뒤, V 문자를 할당합니다.
+echo	Child와 그 복사본을 생성하고 Attach한 뒤, V 문자를 할당합니다.
 echo.
 diskpart /s .\diskpart\vhd.txt
+copy c:\vhd\child.vhd c:\vhd\child_copy.vhd
+diskpart /s .\diskpart\vhd1.txt
 
 )
 
