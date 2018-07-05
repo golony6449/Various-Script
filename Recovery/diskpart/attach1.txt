@@ -1,0 +1,3 @@
+select vdisk file=d:\vhd\child.vhd
+attach vdisk
+assign letter=v
