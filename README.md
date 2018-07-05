@@ -21,3 +21,7 @@
 * `clean.txt`: 디스크 초기화 이후, 파티션 생성 및 문자(C) 할당
 * `vhd.txt`: `windows.vhd`를 상속받는 자식 VHD를 생성하고 이를 연결(Attach)
 * `vhdSSD.txt`: `windows.vhd`를 연결(Attach). (128GB(SSD)의 조달용 PC 대응을 위함)
+
+## Windows_init
+* 초기 설정용 스크립트
+* IP 설정, 계정 비밀번호 설정
