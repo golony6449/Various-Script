@@ -6,22 +6,16 @@ echo.
 echo		VHD 설정 스크립트
 echo.
 echo.
+echo    경상대학교 자연과학대학
+echo                    컴퓨터과학과 실습조교실
 echo.
+echo.
+echo.
+echo    초기설정을 진행합니다.
+pause
 
-:: SSD, HDD 여부 설정
+
 :restart
-set /p isSSD=SSD PC 입니까? (y/n)
-
-if "%isSSD%" == "y" (
-echo	SSD 환경에서의 설정을 진행합니다.
-) else (
-if "%isSSD%" == "n" (
-echo	HDD 환경에서의 설정을 진행합니다.
-) else (
-echo	올바르지 않은 입력입니다.
-goto restart
-)
-)
 
 :: 기존 이미지 사용 여부 확인
 :imgcheck
@@ -42,7 +36,7 @@ if "%oldimg%" == "y" (
 )
 ) else (
 echo	이미지가 존재하지 않습니다. 계속 진행합니다.
-set oldimg=n
+set oldimg="n"
 )
 
 
@@ -82,21 +76,10 @@ echo	VHD 작업 시작
 echo.
 echo    VHD 용량을 확장합니다.
 echo.
-if "%isSSD%" == "y" (
 
 echo	부모를 Attach한 뒤, V 문자를 할당합니다.
 echo.
 diskpart /s .\diskpart\vhdSSD.txt
-
-) else (
-
-echo	Child와 그 복사본을 생성하고 Attach한 뒤, V 문자를 할당합니다.
-echo.
-diskpart /s .\diskpart\vhd.txt
-copy c:\vhd\child.vhd c:\vhd\child_copy.vhd
-diskpart /s .\diskpart\vhd1.txt
-
-)
 
 echo.
 echo	VHD 작업 완료
