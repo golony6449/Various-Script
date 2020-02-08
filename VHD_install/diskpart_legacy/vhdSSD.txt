@@ -1,0 +1,6 @@
+select vdisk file=c:\vhd\windows.vhd
+expand vdisk maximum=102400
+attach vdisk
+select part 1
+extend
+assign letter=v
