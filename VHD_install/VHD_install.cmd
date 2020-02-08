@@ -55,7 +55,7 @@ echo.
 
 echo	부모를 Attach한 뒤, V 문자를 할당합니다.
 echo.
-diskpart /s .\diskpart\vhdSSD.txt
+diskpart /s .\diskpart\attach_and_expand_vhd.txt
 
 echo.
 echo	VHD 작업 완료
