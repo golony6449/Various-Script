@@ -11,35 +11,13 @@ echo                    컴퓨터과학과 실습조교실
 echo.
 echo.
 echo.
-echo    초기설정을 진행합니다.
-pause
-
-
 :restart
-
-:: 기존 이미지 사용 여부 확인
-:imgcheck
-if exist C:\vhd\windows.vhd (
-echo	이미지가 존재합니다.
+echo    초기설정을 진행합니다.
 echo.
-
-set /p oldimg="기존 이미지를 사용하겠습니까? (y/n)"
-
-if "%oldimg%" == "y" (
-    echo    기존 이미지를 사용합니다.
-    goto vhd
-) else (
-    if "%oldimg%" == "n" (
-        echo    스토리지를 초기화 하고 새 이미지를 복사합니다.
-        goto start
-    ) 
-)
-) else (
-echo	이미지가 존재하지 않습니다. 계속 진행합니다.
-set oldimg="n"
-)
-
-
+echo.
+echo    주의) 0번 디스크가 초기화됩니다.
+echo.
+pause
 :start
 echo.
 echo	DISK 초기화 수행
@@ -61,10 +39,8 @@ echo	부트로더 설치 완료
 echo.
 echo.
 echo.
-if "%oldimg%" == "n" (
 echo	이미지를 복사합니다.
 robocopy .\vhd c:\vhd /ETA
-)
 
 :: VHD 작업 파트
 :vhd
